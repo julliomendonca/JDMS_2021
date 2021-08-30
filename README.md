@@ -8,3 +8,5 @@ The models were created using TimeNET 4.3 (https://timenet.tu-ilmenau.de/).
 Before running the models, please verify their parameters.
 The results in the paper were obtained through the stationary simulation, using default simulation parameters.
 Note that it is normal if the results vary (just) a little since they were obtained through simulation.
+
+Contact: julio.rodrigues.m@gmail.com
