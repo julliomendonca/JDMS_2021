@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net gridActive="true" id="0" netclass="eDSPN" sharpEdges="false"
+  xmlns="http://pdv.cs.tu-berlin.de/TimeNET/schema/eDSPN"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pdv.cs.tu-berlin.de/TimeNET/schema/eDSPN etc/schemas/eDSPN.xsd">
+  <place id="0.15" initialMarking="0" type="node">
+    <graphics orientation="0" x="580" y="340"/>
+    <label id="0.15.0" text="PwaitFlow" type="text">
+      <graphics x="-40" y="-40"/>
+    </label>
+  </place>
+  <place id="0.17" initialMarking="0" type="node">
+    <graphics orientation="0" x="820" y="340"/>
+    <label id="0.17.0" text="PserverQ" type="text">
+      <graphics x="-50" y="-40"/>
+    </label>
+  </place>
+  <place id="0.18" initialMarking="Q" type="node">
+    <graphics orientation="0" x="820" y="450"/>
+    <label id="0.18.0" text="PqueueSize" type="text">
+      <graphics x="30" y="0"/>
+    </label>
+  </place>
+  <place id="0.19" initialMarking="0" type="node">
+    <graphics orientation="0" x="1070" y="340"/>
+    <label id="0.19.0" text="Pserver1BusyS" type="text">
+      <graphics x="-60" y="30"/>
+    </label>
+  </place>
+  <place id="0.20" initialMarking="N" type="node">
+    <graphics orientation="0" x="1070" y="260"/>
+    <label id="0.20.0" text="Pserver1Idle" type="text">
+      <graphics x="-90" y="0"/>
+    </label>
+  </place>
+  <place id="0.21" initialMarking="0" type="node">
+    <graphics orientation="0" x="1070" y="180"/>
+    <label id="0.21.0" text="Pserver1BusyL" type="text">
+      <graphics x="-60" y="-40"/>
+    </label>
+  </place>
+  <place id="0.2" initialMarking="20" type="node">
+    <graphics orientation="0" x="580" y="460"/>
+    <label id="0.2.0" text="P0" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </place>
+  <exponentialTransition DTSPNpriority="1" delay="REQUESTS_ARRIVAL_TIME"
+    id="0.0" preemptionPolicy="PRD" serverType="ExclusiveServer" type="node">
+    <graphics orientation="0" x="470" y="340"/>
+    <label id="0.0.0" text="TstartNewRqt" type="text">
+      <graphics x="-90" y="0"/>
+    </label>
+  </exponentialTransition>
+  <exponentialTransition DTSPNpriority="1"
+    delay="SWITCH_PROCESS + TIME_TO_UPDATE_FLOW_TABLES" id="0.1"
+    preemptionPolicy="PRD" serverType="ExclusiveServer" type="node">
+    <graphics orientation="0" x="690" y="340"/>
+    <label id="0.1.0" text="TfowardRqt" type="text">
+      <graphics x="-40" y="-40"/>
+    </label>
+  </exponentialTransition>
+  <exponentialTransition DTSPNpriority="1"
+    delay="SERVICE_TIME_REQUEST_L" id="0.4" preemptionPolicy="PRD"
+    serverType="InfiniteServer" type="node">
+    <graphics orientation="0" x="1180" y="180"/>
+    <label id="0.4.0" text="TprocRqtL" type="text">
+      <graphics x="-20" y="-40"/>
+    </label>
+  </exponentialTransition>
+  <exponentialTransition DTSPNpriority="1"
+    delay="SERVICE_TIME_REQUEST_S" id="0.3" preemptionPolicy="PRD"
+    serverType="InfiniteServer" type="node">
+    <graphics orientation="0" x="1190" y="340"/>
+    <label id="0.3.0" text="TprocRqtS" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </exponentialTransition>
+  <immediateTransition enablingFunction="" id="0.7" priority="1"
+    type="node" weight="1">
+    <graphics orientation="0" x="950" y="340"/>
+    <label id="0.7.0" text="TstartProcS" type="text">
+      <graphics x="-40" y="-40"/>
+    </label>
+  </immediateTransition>
+  <immediateTransition enablingFunction="" id="0.39" priority="1"
+    type="node" weight="1">
+    <graphics orientation="0" x="950" y="180"/>
+    <label id="0.39.0" text="TstartProcL" type="text">
+      <graphics x="-80" y="-20"/>
+    </label>
+  </immediateTransition>
+  <arc fromNode="0.0" id="0.11" toNode="0.15" type="connector">
+    <inscription id="0.11.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.15" id="0.12" toNode="0.1" type="connector">
+    <inscription id="0.12.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.17" id="0.31" toNode="0.7" type="connector">
+    <inscription id="0.31.0" text="1" type="inscriptionText">
+      <graphics x="-5" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.7" id="0.32" toNode="0.18" type="connector">
+    <inscription id="0.32.0" text="1" type="inscriptionText">
+      <graphics x="-5" y="-15"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.7" id="0.33" toNode="0.19" type="connector">
+    <inscription id="0.33.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.20" id="0.34" toNode="0.7" type="connector">
+    <inscription id="0.34.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.20" id="0.40" toNode="0.39" type="connector">
+    <inscription id="0.40.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.39" id="0.41" toNode="0.21" type="connector">
+    <inscription id="0.41.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.21" id="0.42" toNode="0.4" type="connector">
+    <inscription id="0.42.0" text="1" type="inscriptionText">
+      <graphics x="-5" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.4" id="0.43" toNode="0.20" type="connector">
+    <inscription id="0.43.0" text="1" type="inscriptionText">
+      <graphics x="-5" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.17" id="0.44" toNode="0.39" type="connector">
+    <inscription id="0.44.0" text="1" type="inscriptionText">
+      <graphics x="-5" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.39" id="0.45" toNode="0.18" type="connector">
+    <inscription id="0.45.0" text="1" type="inscriptionText">
+      <graphics x="-5" y="-15"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.2" id="0.5" toNode="0.0" type="connector">
+    <inscription id="0.5.0" text="1" type="inscriptionText">
+      <graphics x="-10" y="-10"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.1" id="0.8" toNode="0.2" type="connector">
+    <inscription id="0.8.0" text="1" type="inscriptionText">
+      <graphics x="-10" y="-10"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.19" id="0.13" toNode="0.3" type="connector">
+    <inscription id="0.13.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.3" id="0.14" toNode="0.20" type="connector">
+    <inscription id="0.14.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.1" id="0.6" toNode="0.17" type="connector">
+    <inscription id="0.6.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.18" id="0.9" toNode="0.1" type="connector">
+    <inscription id="0.9.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <measure expression="(E{#Pserver1BusyS} + E{#Pserver1BusyL})/N"
+    id="0.53" name="SERVER1_UTILIZATION" result="0.99999835" type="text">
+    <graphics x="10" y="610"/>
+  </measure>
+  <measure expression="E{#PserverQ}" id="0.54"
+    name="SERVER1_AVERAGE_QUEUE_SIZE" result="9.99840968" type="text">
+    <graphics x="10" y="630"/>
+  </measure>
+  <measure
+    expression="E{#PwaitFlow} + E{#PserverQ} + E{#Pserver1BusyS} + E{#Pserver1BusyL}"
+    id="0.63" name="AVERAGE_NUMBER_OF_REQUESTS_IN_THE_SYSTEM"
+    result="33.60757633" type="text">
+    <graphics x="10" y="730"/>
+  </measure>
+  <measure
+    expression="(E{#Pserver1BusyS}/SERVICE_TIME_REQUEST_S) + (E{#Pserver1BusyL}/SERVICE_TIME_REQUEST_L)"
+    id="0.64" name="SERVER1_THROUGHPUT" result="0.09523785" type="text">
+    <graphics x="10" y="650"/>
+  </measure>
+  <measure
+    expression="(E{#PwaitFlow} + E{#PserverQ} + E{#Pserver1BusyS} + E{#Pserver1BusyL}) / ((E{#Pserver1BusyS}/SERVICE_TIME_REQUEST_S) + (E{#Pserver1BusyL}/SERVICE_TIME_REQUEST_L))"
+    id="0.65" name="SERVER1_RESPONSE_TIME" result="352.88045358" type="text">
+    <graphics x="10" y="690"/>
+  </measure>
+  <measure
+    expression="E{#PserverQ} * (REQUESTS_ARRIVAL_TIME) * P{#P0>0}"
+    id="0.66" name="SERVER1_MEAN_QUEUE_TIME" result="23.8064387" type="text">
+    <graphics x="10" y="820"/>
+  </measure>
+  <measure
+    expression="E{#PserverQ} + E{#Pserver1BusyS} + E{#Pserver1BusyL}"
+    id="0.67" name="MEAN_REQUESTS_ON_SERVER1" result="14.99840142" type="text">
+    <graphics x="10" y="710"/>
+  </measure>
+  <measure expression="P{#P0 = 0}" id="0.10" name="PROB_SW_FULL"
+    result="0.52379549" type="text">
+    <graphics x="10" y="590"/>
+  </measure>
+  <measure expression="3600/(1/(1/REQUESTS_ARRIVAL_TIME * P{#P0 = 0}))"
+    id="0.16" name="NUM_BLOCKED_SW" result="377.13275598" type="text">
+    <graphics x="10" y="570"/>
+  </measure>
+  <measure expression="(1/5) * (P{#P0 > 0})" id="0.25"
+    name="TPentradaReal" result="0.0952409" type="text">
+    <graphics x="600" y="770"/>
+  </measure>
+  <measure
+    expression="((E{#Pserver1BusyS}/SERVICE_TIME_REQUEST_S) + (E{#Pserver1BusyL}/SERVICE_TIME_REQUEST_L)) / ((1/5)) "
+    id="0.26" name="ProbJobsCompleted" result="0.47618926" type="text">
+    <graphics x="600" y="800"/>
+  </measure>
+  <measure
+    expression="COSTKWH * ((P{(#Pserver1Idle=0)}*(0.0085+0.0227)) + (P{(#Pserver1Idle=1)} * (0.0085+(0.0227*0.8))) + (P{(#Pserver1Idle=2)} * (0.0085+(0.0227*0.6))) + (P{(#Pserver1Idle=3)} * (0.0085+(0.0227*0.4))) + (P{(#Pserver1Idle=4)} * (0.0085+(0.0227*0.2))) + (P{(#Pserver1Idle=5)} * (0.0085+(0.005))))"
+    id="0.27" name="OpCost" result="0.004056" type="text">
+    <graphics x="600" y="840"/>
+  </measure>
+  <measure
+    expression="((3600/(1/((1/5) * (P{#P0 = 0})))) * (1/2) * COST_LONG_REQ) + ((3600/(1/((1/5) * (P{#P0 = 0})))) * (1/2) * COST_SHORT_REQ)"
+    id="0.29" name="CostBlocked" result="11.31398268" type="text">
+    <graphics x="590" y="870"/>
+  </measure>
+  <measure expression="E{#Pserver1BusyS}" id="0.22" name="NUM_SHORT"
+    result="0.23809439" type="text">
+    <graphics x="10" y="760"/>
+  </measure>
+  <measure expression="E{#Pserver1BusyL}" id="0.23" name="NUM_LONG"
+    result="4.76189735" type="text">
+    <graphics x="10" y="790"/>
+  </measure>
+  <definition expression="5" id="0.55" name="N" type="text">
+    <graphics x="10" y="80"/>
+  </definition>
+  <definition expression="10" id="0.56" name="Q" type="text">
+    <graphics x="10" y="100"/>
+  </definition>
+  <definition defType="real" expression="300.0" id="0.57" name="MTDTIME" type="text">
+    <graphics x="10" y="130"/>
+  </definition>
+  <definition defType="real" expression="100.0" id="0.58"
+    name="SERVICE_TIME_REQUEST_L" type="text">
+    <graphics x="10" y="150"/>
+  </definition>
+  <definition defType="real" expression="5.0" id="0.59"
+    name="SERVICE_TIME_REQUEST_S" type="text">
+    <graphics x="10" y="170"/>
+  </definition>
+  <definition defType="real" expression="5" id="0.60"
+    name="REQUESTS_ARRIVAL_TIME" type="text">
+    <graphics x="10" y="190"/>
+  </definition>
+  <definition defType="real" expression="0.001" id="0.61"
+    name="SWITCH_PROCESS" type="text">
+    <graphics x="10" y="210"/>
+  </definition>
+  <definition defType="real" expression="0.0067" id="0.62"
+    name="TIME_TO_UPDATE_FLOW_TABLES" type="text">
+    <graphics x="10" y="230"/>
+  </definition>
+  <definition defType="real" expression="0.13" id="0.30" name="COSTKWH" type="text">
+    <graphics x="1030" y="900"/>
+  </definition>
+  <definition defType="real" expression="0.05" id="0.35"
+    name="COST_LONG_REQ" type="text">
+    <graphics x="1040" y="870"/>
+  </definition>
+  <definition defType="real" expression="0.01" id="0.36"
+    name="COST_SHORT_REQ" type="text">
+    <graphics x="1060" y="840"/>
+  </definition>
+</net>

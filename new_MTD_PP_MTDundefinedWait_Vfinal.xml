@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net gridActive="false" id="0" netclass="eDSPN" sharpEdges="false"
+  xmlns="http://pdv.cs.tu-berlin.de/TimeNET/schema/eDSPN"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pdv.cs.tu-berlin.de/TimeNET/schema/eDSPN etc/schemas/eDSPN.xsd">
+  <place id="0.0" initialMarking="0" type="node">
+    <graphics orientation="0" x="443" y="566"/>
+    <label id="0.0.0" text="P0" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </place>
+  <place id="0.1" initialMarking="20" type="node">
+    <graphics orientation="0" x="437" y="723"/>
+    <label id="0.1.0" text="P1" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </place>
+  <place id="0.2" initialMarking="0" type="node">
+    <graphics orientation="0" x="694" y="564"/>
+    <label id="0.2.0" text="P2" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </place>
+  <place id="0.3" initialMarking="10" type="node">
+    <graphics orientation="0" x="696" y="719"/>
+    <label id="0.3.0" text="P3" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </place>
+  <place id="0.4" initialMarking="5" type="node">
+    <graphics orientation="0" x="940" y="354"/>
+    <label id="0.4.0" text="P4" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </place>
+  <place id="0.5" initialMarking="0" type="node">
+    <graphics orientation="0" x="942" y="565"/>
+    <label id="0.5.0" text="P5" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </place>
+  <place id="0.6" initialMarking="0" type="node">
+    <graphics orientation="0" x="943" y="135"/>
+    <label id="0.6.0" text="P6" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </place>
+  <place id="0.41" initialMarking="0" type="node">
+    <graphics orientation="0" x="1188" y="354"/>
+    <label id="0.41.0" text="P7" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </place>
+  <exponentialTransition DTSPNpriority="1" delay="5" id="0.7"
+    preemptionPolicy="PRD" serverType="ExclusiveServer" type="node">
+    <graphics orientation="0" x="328" y="566"/>
+    <label id="0.7.0" text="T0" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </exponentialTransition>
+  <exponentialTransition DTSPNpriority="1" delay="0.0077" id="0.8"
+    preemptionPolicy="PRD" serverType="ExclusiveServer" type="node">
+    <graphics orientation="0" x="568" y="566"/>
+    <label id="0.8.0" text="T1" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </exponentialTransition>
+  <exponentialTransition DTSPNpriority="1" delay="5" id="0.9"
+    preemptionPolicy="PRD" serverType="InfiniteServer" type="node">
+    <graphics orientation="0" x="1084" y="567"/>
+    <label id="0.9.0" text="T2" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </exponentialTransition>
+  <exponentialTransition DTSPNpriority="1" delay="100" id="0.10"
+    preemptionPolicy="PRD" serverType="InfiniteServer" type="node">
+    <graphics orientation="0" x="1082" y="135"/>
+    <label id="0.10.0" text="T3" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </exponentialTransition>
+  <exponentialTransition DTSPNpriority="1" delay="1" id="0.40"
+    preemptionPolicy="PRD" serverType="ExclusiveServer" type="node">
+    <graphics orientation="0" x="1090" y="355"/>
+    <label id="0.40.0" text="T9" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </exponentialTransition>
+  <immediateTransition enablingFunction="#P7 = 0" id="0.11" priority="1"
+    type="node" weight="1">
+    <graphics orientation="0" x="809" y="563"/>
+    <label id="0.11.0" text="T4" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </immediateTransition>
+  <immediateTransition enablingFunction="#P7 = 0" id="0.12" priority="1"
+    type="node" weight="1">
+    <graphics orientation="0" x="812" y="133"/>
+    <label id="0.12.0" text="T5" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </immediateTransition>
+  <deterministicTransition DTSPNpriority="1" delay="MTDTIME" id="0.42"
+    preemptionPolicy="PRD" type="node">
+    <graphics orientation="0" x="1304" y="354"/>
+    <label id="0.42.0" text="T10" type="text">
+      <graphics x="-10" y="-40"/>
+    </label>
+  </deterministicTransition>
+  <arc fromNode="0.7" id="0.16" toNode="0.0" type="connector">
+    <inscription id="0.16.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.0" id="0.17" toNode="0.8" type="connector">
+    <inscription id="0.17.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.8" id="0.18" toNode="0.1" type="connector">
+    <inscription id="0.18.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.1" id="0.19" toNode="0.7" type="connector">
+    <inscription id="0.19.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.8" id="0.20" toNode="0.2" type="connector">
+    <inscription id="0.20.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.2" id="0.21" toNode="0.11" type="connector">
+    <inscription id="0.21.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.11" id="0.23" toNode="0.3" type="connector">
+    <inscription id="0.23.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.3" id="0.25" toNode="0.8" type="connector">
+    <inscription id="0.25.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.11" id="0.26" toNode="0.5" type="connector">
+    <inscription id="0.26.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.4" id="0.27" toNode="0.11" type="connector">
+    <inscription id="0.27.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.5" id="0.28" toNode="0.9" type="connector">
+    <inscription id="0.28.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.9" id="0.29" toNode="0.4" type="connector">
+    <inscription id="0.29.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.10" id="0.34" toNode="0.4" type="connector">
+    <inscription id="0.34.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.6" id="0.35" toNode="0.10" type="connector">
+    <inscription id="0.35.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.12" id="0.36" toNode="0.6" type="connector">
+    <inscription id="0.36.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.2" id="0.37" toNode="0.12" type="connector">
+    <inscription id="0.37.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.12" id="0.38" toNode="0.3" type="connector">
+    <inscription id="0.38.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+    <handle id="0.38.1">
+      <graphics orientation="0" x="803" y="498"/>
+    </handle>
+  </arc>
+  <arc fromNode="0.4" id="0.39" toNode="0.12" type="connector">
+    <inscription id="0.39.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.40" id="0.43" toNode="0.4" type="connector">
+    <inscription id="0.43.0" text="5" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.4" id="0.44" toNode="0.40" type="connector">
+    <inscription id="0.44.0" text="5" type="inscriptionText">
+      <graphics x="-8" y="-10"/>
+    </inscription>
+    <handle id="0.44.1">
+      <graphics orientation="0" x="1036" y="327"/>
+    </handle>
+  </arc>
+  <arc fromNode="0.41" id="0.45" toNode="0.40" type="connector">
+    <inscription id="0.45.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <arc fromNode="0.42" id="0.46" toNode="0.41" type="connector">
+    <inscription id="0.46.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+  </arc>
+  <inhibit fromNode="0.41" id="0.47" toNode="0.42" type="connector">
+    <inscription id="0.47.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+    <handle id="0.47.1">
+      <graphics orientation="0" x="1260" y="331"/>
+    </handle>
+  </inhibit>
+  <inhibit fromNode="0.41" id="0.50" toNode="0.8" type="connector">
+    <inscription id="0.50.0" text="1" type="inscriptionText">
+      <graphics x="0" y="0"/>
+    </inscription>
+    <handle id="0.50.1">
+      <graphics orientation="0" x="1191" y="754"/>
+    </handle>
+    <handle id="0.50.2">
+      <graphics orientation="0" x="568" y="760"/>
+    </handle>
+  </inhibit>
+  <measure expression="E{#P5}" id="0.48" name="NumberShortJobs"
+    result="0.1985246" type="text">
+    <graphics x="38" y="483"/>
+  </measure>
+  <measure expression="E{#P6}" id="0.49" name="NumberLongJobs"
+    result="3.267113" type="text">
+    <graphics x="39" y="499"/>
+  </measure>
+  <measure expression="P{#P1 = 0}" id="0.51" name="ProbSWfull"
+    result="0.6393365" type="text">
+    <graphics x="40" y="290"/>
+  </measure>
+  <measure expression="E{#P0} + E{#P2} + E{#P5} + E{#P6}" id="0.52"
+    name="NumJobsSystem" result="33.04404" type="text">
+    <graphics x="42" y="332"/>
+  </measure>
+  <measure expression="E{#P2}" id="0.53" name="QueueSize"
+    result="11.15093" type="text">
+    <graphics x="42" y="356"/>
+  </measure>
+  <measure expression="3600/(1/((1/5) * (P{#P1 = 0})))" id="0.54"
+    name="NumBlockJobsSW" result="453.8111" type="text">
+    <graphics x="40" y="268"/>
+  </measure>
+  <measure expression="((E{#P5}/5) + (E{#P6}/100))" id="0.55"
+    name="TPtotal" result="0.07647336" type="text">
+    <graphics x="44" y="393"/>
+  </measure>
+  <measure
+    expression="(E{#P0} + E{#P2} + E{#P5} + E{#P6}) / ((E{#P5}/5) + (E{#P6}/100))"
+    id="0.56" name="ResponseTimeTotal" result="403.5343" type="text">
+    <graphics x="45" y="413"/>
+  </measure>
+  <measure expression="(E{#P5} + E{#P6})/5" id="0.57" name="Utilization"
+    result="0.8308521" type="text">
+    <graphics x="39" y="444"/>
+  </measure>
+  <measure expression="E{#P2} * (5/P{#P1 = 0})" id="0.58"
+    name="QueueTime" result="94.70499" type="text">
+    <graphics x="23" y="547"/>
+  </measure>
+  <measure expression="(1/5) * (P{#P1 > 0})" id="0.22"
+    name="TPentradaReal" result="0.09967578" type="text">
+    <graphics x="69" y="859"/>
+  </measure>
+  <measure expression="((E{#P5}/5) + (E{#P6}/100)) / (1/5) " id="0.24"
+    name="ProbJobsCompleted" result="0.4157736" type="text">
+    <graphics x="57" y="984"/>
+  </measure>
+  <measure
+    expression="COSTKWH * ((P{(#P4=0)}*(0.0085+0.0227)) + (P{(#P4=1)} * (0.0085+(0.0227*0.8))) + (P{(#P4=2)} * (0.0085+(0.0227*0.6))) + (P{(#P4=3)} * (0.0085+(0.0227*0.4))) + (P{(#P4=4)} * (0.0085+(0.0227*0.2))) + (P{(#P4=5)} * (0.0085+(0.005))))"
+    id="0.30" name="OpCost" result="0.003768028" type="text">
+    <graphics x="64" y="926"/>
+  </measure>
+  <measure
+    expression="((3600/(1/((1/5) * (P{#P1 = 0})))) * (1/2) * COST_LONG_REQ) + ((3600/(1/((1/5) * (P{#P1 = 0})))) * (1/2) * COST_SHORT_REQ)"
+    id="0.32" name="CostBlocked" result="13.61433" type="text">
+    <graphics x="60" y="961"/>
+  </measure>
+  <definition defType="real" expression="0.13" id="0.33" name="COSTKWH" type="text">
+    <graphics x="499" y="988"/>
+  </definition>
+  <definition defType="real" expression="0.05" id="0.59"
+    name="COST_LONG_REQ" type="text">
+    <graphics x="506" y="961"/>
+  </definition>
+  <definition defType="real" expression="0.01" id="0.60"
+    name="COST_SHORT_REQ" type="text">
+    <graphics x="524" y="935"/>
+  </definition>
+  <definition defType="real" expression="300" id="0.13" name="MTDTIME" type="text">
+    <graphics x="505" y="1010"/>
+  </definition>
+</net>
